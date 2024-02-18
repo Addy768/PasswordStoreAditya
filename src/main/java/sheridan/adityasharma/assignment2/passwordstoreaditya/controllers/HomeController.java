@@ -1,24 +1,29 @@
 package sheridan.adityasharma.assignment2.passwordstoreaditya.controllers;
 
-import ch.qos.logback.core.model.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import sheridan.adityasharma.assignment2.passwordstoreaditya.beans.PasswordRecord;
+import sheridan.adityasharma.assignment2.passwordstoreaditya.service.PasswordService;
 
 @Controller
 public class HomeController {
+
+    @Autowired
+    private PasswordService service;
+
     @GetMapping("/")
     public String showHomePage() {
-        return "index"; // Return the name of the HTML template (index.html)
+        return "index";
     }
 
     @PostMapping("/add")
-    public String addPassword(@RequestParam String title, @RequestParam String username,
-                              @RequestParam String password, @RequestParam String url,
-                              @RequestParam String email, @RequestParam String notes,
-                              Model model)
+    public String addPassword(Model model, @ModelAttribute PasswordRecord record)
     {
+
+        System.out.println("Starting entry of add");
+        service.addRecord(record);
         return "index";
 
     }
