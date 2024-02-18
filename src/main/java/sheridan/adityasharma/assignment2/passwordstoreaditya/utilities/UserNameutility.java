@@ -1,2 +1,4 @@
-package sheridan.adityasharma.assignment2.passwordstoreaditya.utilities;public class UserNameutility {
+package sheridan.adityasharma.assignment2.passwordstoreaditya.utilities;
+
+public class UserNameutility {
 }
