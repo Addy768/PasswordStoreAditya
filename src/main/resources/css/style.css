@@ -66,3 +66,23 @@ footer {
     left: 0;
     width: 100%;
 }
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: black; /* Change the background color if needed */
+}
+
+#snow-canvas-container {
+    position: relative;
+    height: 100%;
+}
+
+#snow-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
