@@ -2,44 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Store</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
+    <style>
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 200px); /* Subtracting the header and reduced footer height */
+            margin: 0 auto;
+            flex-direction: column;
+            margin-bottom: 50px; /* Adding margin to prevent overlap with footer */
+        }
+        .container {
+            text-align: center;
+            margin-bottom: 50px; /* Adding margin to prevent overlap with footer */
+        }
+        footer {
+            height: 100px; /* Reducing footer height */
+        }
+    </style>
 </head>
 <body>
 <header>
-    <img src="logo.png" alt="Password Store Logo">
+    <nav style="display: flex; align-items: center;">
+        <img src="/logo.png" alt="Password Store Logo" style="max-width: 50px;">
+        <h1 style="margin: 1px 0; font-size: 20px; font-weight: normal;">Aditya's password store</h1>
+    </nav>
+    <nav>
+        <a href="/index">add record</a>
+        <a href="/product">view record</a>
+        <a href="/searchByTitle">searchrecords</a>
+    </nav>
 </header>
-<div class="container">
-    <h1>Add Password Record</h1>
-    <form action="/add" method="post">
 
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br><br>
 
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
-
-        <label for="url">URL:</label>
-        <input type="text" id="url" name="url"><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="notes">Notes:</label><br>
-        <textarea id="notes" name="notes" rows="4" cols="50"></textarea><br><br>
-
-        <button type="submit">Add Record</button>
-    </form>
-    <p id="message"></p>
+<div class="main-content">
+    <div class="container">
+        <h1>Add Password Record</h1>
+        <form action="/add" method="post">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <label for="url">URL:</label>
+            <input type="text" id="url" name="url"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="notes">Notes:</label><br>
+            <textarea id="notes" name="notes" rows="1" cols="30"></textarea><br><br>
+            <button type="submit">Add Record</button>
+        </form>
+        <p id="message"></p>
+    </div>
 </div>
 <footer>
-    <a href="/product">View Password Records</a>
-    <a href="/searchByTitle">Search Password Records</a>
+
+    <p>Copyrights © Aditya </p>
+    <p>Student ID: 991663142</p>
 </footer>
 </body>
 </html>

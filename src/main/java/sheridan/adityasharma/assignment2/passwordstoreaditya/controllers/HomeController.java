@@ -16,11 +16,13 @@ public class HomeController {
     @Autowired
     private PasswordService service;
 
-    @GetMapping("/")
+    // This function is responsible for showing the home page when the "/index" URL is accessed.
+    @GetMapping("/index")
     public String showHomePage() {
         return "index";
     }
 
+    // This function is triggered when a POST request is made to the "/add" URL. It adds a new password record to the database.
     @PostMapping("/add")
     public String addPassword(Model model, @ModelAttribute PasswordRecord record)
     {
@@ -30,11 +32,17 @@ public class HomeController {
         return "index";
 
     }
+
+    // This function is responsible for showing the record page when the "/recordpage" URL is accessed.
+    // It fetches all the records from the database and sends them to the view.
     @GetMapping("/recordpage")
     public String showRecordPage(Model model) {
         model.addAttribute("records", service.getAllRecords());
-        return "viewPasswordRecord"; // Assuming your template name is "viewPasswordRecord.html"
+        return "viewPasswordRecord"; // template name is "viewPasswordRecord.html"
     }
+
+    // This function is responsible for showing the view record page when the "/product" URL is accessed.
+    // It fetches all the records from the database and sends them to the view.
     @GetMapping("/product")
     public String product(Model model) {
         List<PasswordRecord> records = service.getAllRecords();
@@ -42,17 +50,18 @@ public class HomeController {
         return "viewPasswordRecord"; // Assuming "product.html" template iterates through "records" attribute
     }
 
-
+    // This function is responsible for searching password records by title when the "/searchByTitle" URL is accessed.
+    // It fetches the search results from the database and sends them to the view.
     @GetMapping("/searchByTitle")
     public String searchByTitle(Model model, @ModelAttribute TitleUtilities titleUtilities) {
         String searchTitle = titleUtilities.getSearchTitle();
         List<PasswordRecord> searchResults = service.searchByTitle(searchTitle);
         if (searchResults.isEmpty()) {
-            model.addAttribute("message", "Record Not Found!");
+            model.addAttribute("message", "no record yet!");
         } else {
             model.addAttribute("searchResults", searchResults);
         }
-        return "searchPasswordRecord"; // Assuming the name of the HTML file is searchPasswordRecord.html
+        return "searchPasswordRecord"; //  the name of the HTML file is searchPasswordRecord.html
     }
 
 
