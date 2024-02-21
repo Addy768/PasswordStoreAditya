@@ -10,6 +10,8 @@ import sheridan.adityasharma.assignment2.passwordstoreaditya.utilities.TitleUtil
 
 import java.util.List;
 
+// name = Aditya Sharma
+// student id == 991663142
 @Controller
 public class HomeController {
 
@@ -52,6 +54,8 @@ public class HomeController {
 
     // This function is responsible for searching password records by title when the "/searchByTitle" URL is accessed.
     // It fetches the search results from the database and sends them to the view.
+    // this handles the search by title page  where user gives the input  and the code handles the input and chekc wether we have the ecord or not if yes then it displays the content otherwise
+    // it displays text no record yet
     @GetMapping("/searchByTitle")
     public String searchByTitle(Model model, @ModelAttribute TitleUtilities titleUtilities) {
         String searchTitle = titleUtilities.getSearchTitle();
@@ -68,3 +72,5 @@ public class HomeController {
 
 
 }
+// name = Aditya Sharma
+// student id == 991663142

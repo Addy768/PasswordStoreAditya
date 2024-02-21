@@ -2,6 +2,8 @@ package sheridan.adityasharma.assignment2.passwordstoreaditya.utilities;
 
 import java.util.Random;
 
+// name = Aditya Sharma
+// student id == 991663142
 public class RandomNumberGenerator {
 
     // This function generates a random long number between a given range (min and max).
@@ -14,3 +16,5 @@ public class RandomNumberGenerator {
 
 
 }
+// name = Aditya Sharma
+// student id == 991663142

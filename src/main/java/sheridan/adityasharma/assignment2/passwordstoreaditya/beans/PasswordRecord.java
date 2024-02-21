@@ -8,6 +8,9 @@ import lombok.*;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+
+// name = Aditya Sharma
+// student id == 991663142
 @Getter
 @Setter
 @AllArgsConstructor
@@ -34,3 +37,5 @@ public class PasswordRecord {
         this.id = ThreadLocalRandom.current().nextLong(min, max);
     }
 }
+// name = Aditya Sharma
+// student id == 991663142
