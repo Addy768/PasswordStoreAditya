@@ -1,6 +1,6 @@
 CREATE TABLE password
 (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id LONG AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255),
     username VARCHAR(255),
     password VARCHAR(255),

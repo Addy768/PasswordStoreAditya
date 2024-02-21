@@ -11,9 +11,11 @@ import java.util.List;
 @Service
 public class PasswordService {
 
+    // Autowired enables you to inject the object dependency implicitly.
     @Autowired
     DatabaseAccess repository;
 
+    // This method is used to add a new record to the database. It generates a unique ID for each record before saving.
     public void addRecord(PasswordRecord passwordRecord) {
         long min = 100_000_000L;
         long max = 999_999_999L;
@@ -21,9 +23,12 @@ public class PasswordService {
         repository.save(passwordRecord);
     }
 
+    // This method is used to fetch all records from the database
     public List<PasswordRecord> getAllRecords() {
         return repository.findAll();
     }
+
+    // This method is used to search records by title. It fetches records from the database that contain the provided title by the user input.
     public List<PasswordRecord> searchByTitle(String title) {
         return repository.findByTitleContaining(title);
     }
